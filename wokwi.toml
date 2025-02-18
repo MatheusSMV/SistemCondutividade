@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/ADC_PWM.uf2'
+elf = 'build/ADC_PWM.elf'
