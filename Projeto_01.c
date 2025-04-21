@@ -7,8 +7,7 @@
 #include "hardware/pio.h" //Biblioteca das funções para manipulação do PIO (Programmable I/O) para controlar a matriz de LEDs WS2812.
 #include "hardware/clocks.h" //Biblioteca das funções para trabalhar com temporizadores.
 #include "hardware/timer.h" //Biblioteca das funções para trabalhar com controle de relógios.
-#include "hardware/adc.h" //Biblioteca para o conversor analógico digital.     
-#include "hardware/pwm.h" //Biblioteca para o PWM.   
+#include "hardware/adc.h" //Biblioteca para o conversor analógico digital.       
 #include "anim.h"
 #include "math.h"
 #include <stdlib.h>
@@ -136,7 +135,7 @@ void exibir_tabela() {
     // Cálculos dos resultados
     float Q = (uf * uf) / r_ele;
     float R_a = (log(re_al / ri_al)) / (2 * 3.14 * l_c * K_al);
-    float R_i = (Ti_f - Te_f) / Q;
+    float R_i = ((Ti_f - Te_f) / Q) - R_a;
     float K_i = (log(re_m / ri_m)) / (2 * 3.14 * l_c * R_i);
 
     printf("| %-46s  %13.6f \n", "Potência Dissipada (W)", Q);
